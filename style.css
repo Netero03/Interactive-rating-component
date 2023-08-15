@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Overpass', sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(216, 12%, 8%);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.box{
+    width: 25.3125rem;
+    height: 25rem;
+    border-radius: 1.875rem;
+    background-color: hsl(212, 22%, 15%);
+    align-items: flex-start;
+    background: repeating-radial-gradient(at 50% -10%, #232a32, #171e28);
+    display: flex;
+    
+}
+
+.feedback{
+
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: 1.875rem;
+    gap: .625rem;
+}
+.image1 {
+    width: 2.9375rem;
+    height: 2.9375rem;
+    background-color: #262f38;
+    border-radius: 3.125rem;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    
+}
+
+.image1 img{
+    position: relative;
+    bottom: .0313rem;
+}
+
+.feedback h3{
+    color: white;
+    font-size:1.5625rem;
+    font-weight:550;
+    padding-top: .9375rem;
+    font-family: 'Overpass', sans-serif;
+}
+.feedback p{
+    color: #868c98;
+    font-weight: 400;
+    font-size:.9375rem;
+    text-align:left;
+    padding-bottom: .625rem;
+}
+.feedback span{
+
+    gap: 1.5rem;
+    padding: .625rem;
+    padding-left: 0rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    padding-bottom: 0rem;
+    
+}
+.rating{
+    width: 3.125rem;
+    height: 3.125rem;
+    padding: .9375rem;
+    border-radius: 1.875rem;
+    background-color: #262f38;
+    border-style: none;
+    color: hsl(216, 9%, 56%);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    align-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#submit{
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(25, 80%, 86%);
+    border-style: none;
+    border-radius: 1.6875rem;
+    width: 21.5625rem;
+    height: 2.8125rem;
+    font-size:.875rem;
+    padding-top: 0rem;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 1.5625rem;
+    transition: background-color 0.3s ease;
+}
+
+.rating:hover{
+    background-color: rgb(167, 108, 0);
+    color:white;
+
+}
+.rating.clicked{
+    background-color: hsl(217, 12%, 63%);
+    color:white;
+
+}
+#submit:hover{
+    background-color: white;
+    color:orange;
+}
+
+#selected{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    align-content: center;
+    
+}
+@media (280px <= width <= 340px){  
+    html{
+        font-size: 60%;
+    }
+    }
+@media (340px <= width <= 450px){  
+    html{
+        font-size: 80%;
+    }
+    }

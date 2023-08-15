@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit&family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <style>
+    .attribution {
+      font-size: .6875rem;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Rating state start -->
+
+  <div role="container" class="container">
+    <div role="box" class="box">
+      <div role="feedbackpage" class="feedback" id="feedback">
+        <div class="image1" id="image1">
+          <img id="img1" src="images/icon-star.svg" alt="SVG image">
+        </div>
+        <div id="selected"></div>
+        <h3>How did we do?</h3>
+
+        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our
+          offering!</p>
+        <span>
+          <button class="rating" value="1">1</button><button class="rating" value="2">2</button><button class="rating"
+            value="3">3</button><button class="rating" value="4">4</button><button class="rating" value="5">5</button>
+        </span>
+        <br></br>
+        <button id="submit">S U B M I T</button>
+      </div>
+    </div>
+  </div>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+  <script>
+
+    const buttons = document.querySelectorAll(".rating");
+
+    let storedValue = "";
+
+    buttons.forEach(button => {
+      button.addEventListener("click", function () {
+
+        storedValue = button.value;
+
+        console.log("Stored Value:", storedValue);
+
+        buttons.forEach(btn => btn.classList.remove('clicked'));
+        button.classList.add('clicked');
+      });
+
+    })
+
+
+    const feedback = document.getElementById("feedback");
+    const submit = document.getElementById("submit");
+
+    submit.addEventListener("click", function () {
+
+
+      feedback.style.alignItems = "center";
+
+      const image1 = document.getElementById("image1");
+      image1.style.backgroundColor = "transparent";
+      image1.style.padding = "4.375rem";
+
+      const img2 = document.querySelector("img");
+      img2.id = "img2";
+      img2.src = "illustration-thank-you.svg";
+      img2.alt = "SVG image2";
+      img2.style.width = "10.125rem";
+      img2.style.height = "6.75rem";
+
+      const newParagraph = document.createElement("h7");
+      selected.textContent = "You selected " + storedValue + " out of 5";
+      selected.style.padding = ".3125rem";
+      selected.style.paddingTop = ".4375rem";
+      selected.style.backgroundColor = "#262f38";
+      selected.style.width = "11.875rem";
+      selected.style.borderRadius = "1.6875rem";
+      selected.style.color = "#af6229";
+      selected.style.fontWeight = "600"
+      selected.style.fontSize = "15px"
+
+      const myDiv = document.getElementById("selected");
+      myDiv.appendChild(newParagraph);
+
+      const h3 = feedback.querySelector("h3");
+      h3.textContent = "Thank you!";
+
+      const p = feedback.querySelector("p");
+      p.textContent = "We appreciate you taking the time to give a rating. If you ever need more support,don’t hesitate to get in touch!";
+      p.style.textAlign = "center";
+      p.style.padding = ".1875rem"
+
+      const span = feedback.querySelector("span");
+      span.remove();
+
+      const button = feedback.querySelector("button");
+      button.remove();
+
+    })
+  </script>
+  <!-- Thank you state end -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+</html>

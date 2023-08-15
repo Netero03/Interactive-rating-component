@@ -32,6 +32,7 @@ Users should be able to:
 
 ![1st](image.png)
 ![2nd](image-1.png)
+![3rd](image-2.png)
 
 ### Links
 

@@ -31,7 +31,7 @@
 
   <!-- Rating state start -->
 
-  <div class="container">
+  <main >
     <div class="box">
       <div class="feedback" id="feedback">
         <div class="image1" id="image1">
@@ -43,14 +43,14 @@
         <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our
           offering!</p>
         <span>
-          <button class="rating" value="1">1</button><button class="rating" value="2">2</button><button class="rating"
+          <button class="rating" value="1" >1</button><button class="rating" value="2">2</button><button class="rating"
             value="3">3</button><button class="rating" value="4">4</button><button class="rating" value="5">5</button>
         </span>
         <br></br>
         <button id="submit">S U B M I T</button>
       </div>
     </div>
-  </div>
+  </main>
   <!-- Rating state end -->
 
   <!-- Thank you state start -->
@@ -59,7 +59,7 @@
     const buttons = document.querySelectorAll(".rating");
 
     let storedValue = "";
-
+    storedValue=0;
     buttons.forEach(button => {
       button.addEventListener("click", function () {
 
